@@ -10,8 +10,13 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, placeholder: "Enter email", class: "form-control" %>
       </div>
 
       <div class="form-group">
@@ -19,12 +24,12 @@
         <% if @validatable %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Enter password", class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Enter password confirmation", class: "form-control" %>
       </div>
 
       <div class="actions">
