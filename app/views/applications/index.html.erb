@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h1><%= current_user.name %>'s Applications</h1>
+    </div>
+  </div>
+  <ul class="list-group">
+    <% @applications.each do |application| %>
+      <li class="list-group-item"><%= link_to application.name, application %></li>
+    <% end %>
+  </ul> 
+  <div class="panel-footer">
+    <%= link_to "Add Application", new_application_path, class: 'btn btn-success' %>
+</div>
+
