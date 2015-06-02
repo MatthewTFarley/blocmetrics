@@ -5,6 +5,7 @@ class ApplicationsController < ApplicationController
   end
 
   def show
+    @event_names = @application.events.pluck(:name)
   end
 
   def new

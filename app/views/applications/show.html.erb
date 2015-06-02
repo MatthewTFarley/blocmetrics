@@ -7,6 +7,20 @@
   <ul class="list-group">
     <li class="list-group-item"><strong>URL: </strong><%= link_to @application.url, @application.url %></li>
   </ul>
+  <table class="table">
+    <tr>
+      <td><strong>Events</strong></td>
+      <td><strong>Count</strong></td>
+    </tr>
+    <% unless @event_names.blank? %>
+      <% @event_names.uniq.each do |name| %>
+        <tr>
+          <td><%= name.capitalize.titleize %></td>
+          <td><%=  @event_names.count(name)%></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
   <div class="panel-footer">
     <%= link_to "Edit", edit_application_path(@application) , class: "btn btn-success" %>
     <%= link_to "Remove", application_path, method: "delete", class: "btn btn-danger" %>

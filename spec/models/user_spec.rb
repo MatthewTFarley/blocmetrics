@@ -20,7 +20,7 @@ describe User do
       expect(User.count).to eq 1
     end
 
-    it "should save a user if all input is valid" do
+    it "should be save if valid" do
       expect(User.count).to eq 1
 
       another_user = User.new name: "jim", email: "jim@example.com", password: "password"

@@ -44,7 +44,7 @@ describe Application do
       expect(duplicate_app.errors).to be_added :url, :taken
     end
 
-    it "should save an app if all input is valid" do
+    it "should be saved if valid" do
       expect(Application.all.count).to eq 0
       @app.name = "app"
       @app.url = "http://www.app.com"
@@ -61,7 +61,7 @@ describe Application do
       expect(app.errors).to be_added :user, :blank
     end
 
-    it "should be destroyed if its user has been destroyed" do
+    it "should be deleted if its user has been deleted" do
       user = User.new name: "user", email: "matt@example.com", password: "password"
       user.skip_confirmation!
       user.save!
