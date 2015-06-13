@@ -33,6 +33,7 @@ gem 'devise'
 gem 'figaro', '1.0'
 gem 'pry-rails'
 gem 'faker'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug'
