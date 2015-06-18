@@ -34,6 +34,8 @@ gem 'figaro', '1.0'
 gem 'pry-rails'
 gem 'faker'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'chartkick'
+gem 'groupdate'
 
 group :development, :test do
   gem 'byebug'
