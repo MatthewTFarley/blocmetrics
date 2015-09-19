@@ -21,7 +21,11 @@
       <% end %>
     <% end %>
   </table>
-  <%= pie_chart @application.events.group(:name).count %>
+  <% if Rails.env.production? %>
+    <%= line_chart @application.events.group_by_day(:created_at).count %>
+  <% else %>
+    <%= pie_chart @application.events.group(:name).count %>
+  <% end %>
   <div class="panel-footer">
     <%= link_to "Edit", edit_application_path(@application) , class: "btn btn-success" %>
     <%= link_to "Remove", application_path, method: "delete", class: "btn btn-danger" %>
