@@ -23,14 +23,6 @@ describe Event do
       expect(event.errors).to be_added :application, :blank
     end
 
-    it "should not save without a unique name" do
-      event1 = Event.create! name: "name", application: @application
-      expect(Event.all.count).to eq 1
-      event2 = Event.new name: "name", application: @application
-      expect{event2.save!}.to raise_error(ActiveRecord::RecordInvalid)
-      expect(event2.errors).to be_added :name, :taken
-    end
-
     it "should be saved if valid" do
       expect(Event.all.count).to eq 0
       Event.create! name: "event", application: @application
